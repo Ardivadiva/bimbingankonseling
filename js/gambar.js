@@ -2,11 +2,6 @@ const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d');
 let isDrawing = false;
 
-canvas.addEventListener('mousedown', startDrawing);
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', endDrawing);
-canvas.addEventListener('mouseout', endDrawing);
-
 const startDrawing = (e) => {
   isDrawing = true;
   draw(e);
@@ -27,3 +22,8 @@ const endDrawing = () => {
   isDrawing = false;
   ctx.beginPath();
 }
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', endDrawing);
+canvas.addEventListener('mouseout', endDrawing);
